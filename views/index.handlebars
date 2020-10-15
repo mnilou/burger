@@ -3,7 +3,7 @@
   <div class="row">
     <div class="center col-sm-12">
       <img src="assets/images/burger.jpg" alt="Burger App">
-      <h1>Burger App</h1>
+      <h1>Devour-a-Burger</h1>
       <p></p>
     </div>
   </div>
@@ -12,10 +12,9 @@
     {{#each burgers}}
     {{#unless devoured}}
     <li>{{burger_name}}
-      <button class="devoured" data-devoured="{{devoured}}" data-id="{{id}}">EAT ME!
+      <button class="change-devoured" data-devoured="{{devoured}}" data-id="{{id}}">EAT ME!
       </button>
     </li>
-    {{> burger-block devoured=false}}
     {{/unless}}
     {{/each}}
   </ul>
@@ -25,28 +24,19 @@
   <ul>
     {{#each burgers}}
     {{#if devoured}}
-    <li> <button class="devoured" data-devoured="{{devoured}}" data-id="{{id}}">Wasn't That Yummy?
-      </button></li>
-    {{> burger-block devoured=true}}
+    <li>{{burger_name}}</li>
     {{/if}}
     {{/each}}
   </ul>
 
-  <h2>Add a Burger</h2>
-  <form class="create-form">
+  <h2>Add a burger</h2>
+
+  <form action="/burgers/create" method="POST" class="create-form">
 
     <div class="form-group">
       <label for="burger">Burger Name:</label>
-      <input type="text" id="burger" name="name">
+      <input type="text" id="burger" name="burger_name">
     </div>
-
-    {{!-- <div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Not Devoured
-  </div> --}}
-
-    {{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
 
     <button type="submit">Add Burger</button>
   </form>

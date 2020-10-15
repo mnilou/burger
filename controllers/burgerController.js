@@ -7,9 +7,9 @@ const router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", (req, res) => {
-  burger.all((data) => {
+  burgers.all((data) => {
     const hbsObject = {
-      burgers: data,
+      burger: data,
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
@@ -25,7 +25,7 @@ router.post("/api/burgers", (req, res) => {
 
 // using put to replace the value of devoured for a
 // specific burger resource
-router.put("/api/burgers/:id/devoured", (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
   const condition = { id: req.params.id };
   const update = { devoured: req.body.value };
 
@@ -37,20 +37,18 @@ router.put("/api/burgers/:id/devoured", (req, res) => {
     res.status(200).end();
   });
 });
-  // DELETE request
-router.delete("/api/burgers/:id", function (req, res) {
-  // getting id from req
-  const condition = "id = " + req.params.id;
-  // removing it from our DB
-  burgers.delete(condition, function (result) {
-      if (result.affectedRows == 0) {
-          // If no rows were changed, then the ID must not exist, so 404
-          return res.status(404).end();
-      } else {
-          res.status(200).end();
-      }
-  });
-});
+  // // DELETE request
+  // router.delete("/api/burgers/:id", (req, res) => {
+  //   const condition = { id: req.params.id };
+  
+  //   burgers.delete(condition, (result) => {
+  //     if (result.affectedRows === 0) {
+  //       // If no rows were changed, then the ID must not exist, so 404
+  //       return res.status(404).end();
+  //     } 
+  //     res.status(200).end();
+  //   });
+  // });
 
 // Export routes for server.js to use.
 module.exports = router;

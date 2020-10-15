@@ -19,11 +19,11 @@ const burger = {
         cb(res);
       });
     },
-    delete: function(criteria, cb) {
-      orm.delete(criteria, (res) => {
-        cb(res);
-      });
-    }
+    // delete: (condition, cb) => {
+    //   orm.delete("burgers", condition, (res) => {
+    //     cb(res);
+    //   });
+    // }
   };
   // Export the burger object at the end of the burger.js file.
   module.exports = burger;

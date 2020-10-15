@@ -1,43 +1,43 @@
 li {
-    padding: 5px;
-    margin: 5px;
-    background: #bb8c4f;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: rgb(55, 151, 87);
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
-  
-  li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  /* body { 
-    background-image: url(https://www.siarza.com/wp-content/uploads/2017/12/webplunder-background-image-technology-online-website-solutions.jpg) ;
-    background-position: center center;
-    background-repeat:  no-repeat;
-    background-attachment: fixed;
-    background-size:  cover;
-    background-color: #000000;  
-  } */
+  padding: 5px;
+  margin: 5px;
+  background: #bb8c4f;
+}
 
-  /* img {
-    align-content: center;
-  }
-   */
- 
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: rgb(55, 151, 87);
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+li {
+  padding: 5px;
+  margin: 5px;
+  background: #d38f36;
+}
+button{
+  background-color: rgb(15, 194, 194);
+}
+.label {
+  font-weight: bold;
+}
+body {
+  background-image: url(http://sfwallpaper.com/images/hd-website-backgrounds-30.jpg); /*https://cdn.hipwallpaper.com/i/76/99/5CwnbF.jpg */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #000000;
+}
+img {
+  align-content: center;
+  border-radius: 90%;
+}

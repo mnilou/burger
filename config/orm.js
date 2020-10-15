@@ -6,12 +6,12 @@ const connection = require('../config/connection.js');
 // Object for all our SQL statement functions.
 const orm = {
   selectAll: (tableInput, cb) => {
-    const queryString = 'SELECT * FROM ?';
-    connection.query(queryString, [tableInput], (err, result) => {
+    const queryString = 'SELECT * FROM ??';
+    connection.query(queryString, [tableInput], (err, res) => {
       if (err) {
         cb(err);
       }
-      cb(result);
+      cb(res);
     });
   },
   insertOne: (table, newRowData, cb) => {
@@ -38,8 +38,17 @@ const orm = {
       return cb(result);
     });
   },
+  // deleteOne: (table, condition, cb) => {
+  //   const queryString = "DELETE FROM ?? WHERE ? LIMIT 1";
+  //   const values = [table, condition];
+  //   connection.query(queryString, values, (err, result) => {
+  //     if (err) {
+  //       throw err;
+  //     }
+  //     cb(result);
+  //   });
+  // },
 
 };
-
 // Export the orm object
 module.exports = orm;
