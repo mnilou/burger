@@ -1,5 +1,6 @@
 // Import MySQL connection.
-const connection = require("../config/connection.js");
+const mysql = require("mysql");
+const connection = require("/config/connection.js");
 
 // Object for all our SQL statement functions.
 const orm = {
@@ -26,7 +27,7 @@ const orm = {
 
   // Example of updateValues: { name: "panther", sleepy: true }
   // Example of condition: { id: 1 }
-  updateOne: (table, updateValues, condition, cb) => {
+  updateOne: (table, updateValues, condition, bb) => {
     const queryString = "UPDATE ?? SET ? WHERE ?";
     const values = [table, updateValues, condition];
 
@@ -35,7 +36,7 @@ const orm = {
       if (err) {
         throw err;
       }
-      cb(result);
+      bb(result);
     });
   },
 
