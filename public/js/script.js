@@ -37,9 +37,6 @@ $(() => {
         location.reload();
       });
     });
-  
-    // Add your code to delete a cat when a ".delete-burger" button is clicked.
-    // ... CODE HERE ...
-    
+      
   });
   

@@ -14,14 +14,12 @@ const burger = {
         cb(res);
       });
     },
-    update: (burgerData, criteria, bb) => {
+    update: (burgerData, criteria, cb) => {
       orm.updateOne("burgers", burgerData, criteria, (res) => {
-        bb(res);
+        cb(res);
       });
     },
   
-    // Add a delete method which uses the `orm.deleteOne` method.
-    // ... CODE HERE ...
     
   };
   // Export the burger object at the end of the burger.js file.

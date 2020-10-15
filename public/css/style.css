@@ -18,3 +18,26 @@ li {
     margin-bottom: 5px;
   }
   
+  li {
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  /* body { 
+    background-image: url(https://www.siarza.com/wp-content/uploads/2017/12/webplunder-background-image-technology-online-website-solutions.jpg) ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #000000;  
+  } */
+
+  /* img {
+    align-content: center;
+  }
+   */
+ 

@@ -1,48 +1,42 @@
 // Import MySQL connection.
-const mysql = require("mysql");
-const connection = require("../config/connection.js");
+const mysql = require('mysql');
+const connection = require('../config/connection.js');
 
 // Object for all our SQL statement functions.
 const orm = {
   selectAll: (tableInput, cb) => {
-    const queryString = "SELECT * FROM ??";
+    const queryString = 'SELECT * FROM ??';
     connection.query(queryString, [tableInput], (err, result) => {
       if (err) {
-        throw err;
+        cb(err);
       }
       cb(result);
     });
   },
   insertOne: (table, newRowData, cb) => {
-    const queryString = "INSERT INTO ?? SET ?";
+    const queryString = 'INSERT INTO ?? SET ?';
     const values = [table, newRowData];
 
     connection.query(queryString, values, (err, result) => {
       if (err) {
-        throw err;
+        cb(err);
       }
-      cb(result);
+      return cb(result);
     });
   },
 
-  // Example of updateValues: { name: "panther", sleepy: true }
-  // Example of condition: { id: 1 }
-  updateOne: (table, updateValues, condition, bb) => {
-    const queryString = "UPDATE ?? SET ? WHERE ?";
+  updateOne: (table, updateValues, condition, cb) => {
+    const queryString = 'UPDATE ?? SET ? WHERE ?';
     const values = [table, updateValues, condition];
 
     console.log(queryString);
     connection.query(queryString, values, (err, result) => {
       if (err) {
-        throw err;
+        cb(err);
       }
-      bb(result);
+      return cb(result);
     });
   },
-
-  // Add a `deleteOne` method which deletes row from a table which meets given
-  // criteria parameter
-  // ... CODE HERE ...
 
 };
 

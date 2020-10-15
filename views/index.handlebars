@@ -1,41 +1,52 @@
-{{!-- Setup the index.handlebars to have the template that Handlebars can render onto. --}}
-<h1>Burger App!</h1>
+<div class="container bg">
 
-<h2>Burgers that are not devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that are devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burger">Burger Name:</label>
-    <input type="text" id="burger" name="name">
+  <div class="row">
+    <div class="center col-sm-12">
+      <img src="./assets/img/burger.jpg" alt="Burger App">
+      <h1>Burger App</h1>
+      <p></p>
+    </div>
   </div>
 
-  <div class="form-group">
+  <ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li>{{burger_name}}
+      <button class="devoured" data-devoured="{{devoured}}" data-id="{{id}}">EAT ME!
+
+      </button>
+    </li>
+    {{/unless}}
+    {{/each}}
+  </ul>
+
+  <h2>Burgers that are devoured!</h2>
+
+  <ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li> <button class="devoured" data-devoured="{{devoured}}" data-id="{{id}}">Wasn't That Yummy?
+      </button></li>
+
+    {{/if}}
+    {{/each}}
+  </ul>
+
+  <h2>Add a Burger</h2>
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="burger">Burger Name:</label>
+      <input type="text" id="burger" name="name">
+    </div>
+
+    {{!-- <div class="form-group">
     <label for="devoured">Devoured?</label><br>
     <input type="radio" name="devoured" value="1" checked> Devoured!<br>
     <input type="radio" name="devoured" value="0"> Not Devoured
-  </div>
+  </div> --}}
 
-{{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
+    {{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
 
-  <button type="submit">Add Burger</button>
-</form>
+    <button type="submit">Add Burger</button>
+  </form>
