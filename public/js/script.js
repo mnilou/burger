@@ -23,22 +23,22 @@ $(() => {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
-      const newCat = {
-        name: $("#ca").val().trim(),
-        sleepy: $("[name=sleepy]:checked").val().trim(),
+      const newBurger = {
+        burger_name: $("#ca").val().trim(),
+        devoured: $("[name=devoured]:checked").val().trim(),
       };
   
       // Send the POST request.
-      $.ajax("/api/cats", {
+      $.ajax("/api/burgers", {
         type: "POST",
-        data: newCat,
+        data: newBurger,
       }).then(() => {
         // Reload the page to get the updated list
         location.reload();
       });
     });
   
-    // Add your code to delete a cat when a ".delete-cat" button is clicked.
+    // Add your code to delete a cat when a ".delete-burger" button is clicked.
     // ... CODE HERE ...
     
   });
