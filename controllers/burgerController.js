@@ -36,7 +36,7 @@ router.put("/api/burgers/:id/devoured", (req, res) => {
     }
     res.status(200).end();
   });
-
+});
   // DELETE request
 router.delete("/api/burgers/:id", function (req, res) {
   // getting id from req

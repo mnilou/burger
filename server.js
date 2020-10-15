@@ -22,7 +22,7 @@ app.engine(
 app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
-  connection.query('SELECT * FROM ?', (err, burgersData) => {
+  connection.query('SELECT * FROM burgers', (err, burgersData) => {
     if (err) {
       console.log(err);
       res.sendStatus(500);
