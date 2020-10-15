@@ -2,7 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const mysql = require('mysql');
 const routes = require('./controllers/burgerController.js');
-const connection = require('./config/connection');
+const connection = require('./config/connection.js');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -17,12 +17,12 @@ app.use(express.json());
 // Set Handlebars
 app.engine(
   'handlebars',
-  exphbs({defaultLayout: 'main', partialsDir: __dirname + './views/partials'})
+  exphbs({ defaultLayout: "main" })
 );
 app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
-  connection.query('SELECT * FROM burgers', (err, burgersData) => {
+  connection.query('SELECT * FROM ?', (err, burgersData) => {
     if (err) {
       console.log(err);
       res.sendStatus(500);

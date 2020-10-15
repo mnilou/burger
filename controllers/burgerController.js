@@ -1,7 +1,7 @@
 const express = require("express");
 
 // Import the model (burger.js) to use its database functions.
-const burger = require("../models/burger.js");
+const burgers = require("../models/burger.js");
 
 const router = express.Router();
 
@@ -36,10 +36,21 @@ router.put("/api/burgers/:id/devoured", (req, res) => {
     }
     res.status(200).end();
   });
-});
-// Add a `/api/burgers/:id` delete route which calls the delete method of the burger
-// model to delete the burger resource with the given id url parameter.
 
+  // DELETE request
+router.delete("/api/burgers/:id", function (req, res) {
+  // getting id from req
+  const condition = "id = " + req.params.id;
+  // removing it from our DB
+  burgers.delete(condition, function (result) {
+      if (result.affectedRows == 0) {
+          // If no rows were changed, then the ID must not exist, so 404
+          return res.status(404).end();
+      } else {
+          res.status(200).end();
+      }
+  });
+});
 
 // Export routes for server.js to use.
 module.exports = router;

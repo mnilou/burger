@@ -13,9 +13,9 @@
     {{#unless devoured}}
     <li>{{burger_name}}
       <button class="devoured" data-devoured="{{devoured}}" data-id="{{id}}">EAT ME!
-
       </button>
     </li>
+    {{> burger-block devoured=false}}
     {{/unless}}
     {{/each}}
   </ul>
@@ -27,7 +27,7 @@
     {{#if devoured}}
     <li> <button class="devoured" data-devoured="{{devoured}}" data-id="{{id}}">Wasn't That Yummy?
       </button></li>
-
+    {{> burger-block devoured=true}}
     {{/if}}
     {{/each}}
   </ul>

@@ -1,11 +1,12 @@
 // Import MySQL connection.
+const express = require("express");
 const mysql = require('mysql');
 const connection = require('../config/connection.js');
 
 // Object for all our SQL statement functions.
 const orm = {
   selectAll: (tableInput, cb) => {
-    const queryString = 'SELECT * FROM ??';
+    const queryString = 'SELECT * FROM ?';
     connection.query(queryString, [tableInput], (err, result) => {
       if (err) {
         cb(err);
