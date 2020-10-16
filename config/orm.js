@@ -7,11 +7,11 @@ const connection = require('../config/connection.js');
 const orm = {
   selectAll: (tableInput, cb) => {
     const queryString = 'SELECT * FROM ??';
-    connection.query(queryString, [tableInput], (err, res) => {
+    connection.query(queryString, [tableInput], (err, result) => {
       if (err) {
         cb(err);
       }
-      cb(res);
+      cb(result);
     });
   },
   insertOne: (table, newRowData, cb) => {
@@ -35,7 +35,7 @@ const orm = {
       if (err) {
         cb(err);
       }
-      return cb(result);
+      cb(result);
     });
   },
   // deleteOne: (table, condition, cb) => {

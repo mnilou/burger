@@ -23,7 +23,7 @@ li {
   margin: 5px;
   background: #d38f36;
 }
-button{
+button {
   background-color: rgb(15, 194, 194);
 }
 .label {
@@ -38,6 +38,7 @@ body {
   background-color: #000000;
 }
 img {
-  align-content: center;
+  margin-left: 300px;
+  height: 300px;
   border-radius: 90%;
 }
