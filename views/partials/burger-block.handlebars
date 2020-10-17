@@ -1,0 +1,14 @@
+{{!-- Burger List --}}
+<li class="row">
+	{{!-- Name of Burger --}}
+	<div class="col-7">
+		<h5 class="burger-name">{{burger_name}}</h5>
+	</div>
+	{{!-- Button Row --}}
+	<div class="col-5 button-row">
+		<button type="button" class="btn btn-sm btn-outline-warning eat-burger" data-id="{{id}}" data-status="{{devoured}}">
+			{{#if devoured}}Try Again!{{else}}Eat it!{{/if}}
+		</button>
+		<button type="button" class="btn btn-sm btn-outline-danger delete-burger" data-id="{{this.id}}">Delete</button>
+	</div>
+</li>

@@ -1,42 +1,46 @@
-<div class="container bg">
-
-  <div class="row">
-    <div class="center col-sm-12">
-      <img src="assets/images/burger.jpg" id= "image" alt="Burger App">
-      <h1>Devour-a-Burger</h1>
-      <p></p>
+<header>
+    <div class="title">
+        {{!-- Title of Page --}}
+        <h1 class="title-text">Devour-a-Burger</h1>
     </div>
-  </div>
+</header>
 
-  <ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li>{{burger_name}}
-      <button class="change-devoured" data-devoured="{{devoured}}" data-id="{{id}}">EAT ME!
-      </button>
-    </li>
-    {{/unless}}
-    {{/each}}
-  </ul>
+<div class="burger-cards">
 
-  <h2>Burgers that were devoured!</h2>
-
-  <ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>{{burger_name}}</li>
-    {{/if}}
-    {{/each}}
-  </ul>
-
-  <h2>Add a burger</h2>
-
-  <form action="/burgers/create" method="POST" class="create-form">
-
-    <div class="form-group">
-      <label for="burger">Burger Name:</label>
-      <input type="text" id="burger" name="burger_name">
+    {{!-- Burgers to Eat Card --}}
+    <div class="card burger-board fresh shadow">
+        <div class="card-body">
+            <h3 style= "color:  rgb(15, 194, 194)"; class="board-title">To be devoured</h3>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burger-block devoured=false}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
     </div>
 
-    <button type="submit">Add Burger</button>
-  </form>
+    {{!-- Add a Burger Card --}}
+    <div class="card form-card shadow">
+        <form class="form-group new-burger">
+            <label for="forANewBurger">Add a Burger!</label>
+            <input type="text" name="burger-name" class="form-control" id="burgerId">
+            <button type="submit" class="btn brgr-btn btn-outline-danger" value="0">Submit</button>
+        </form>
+    </div>
+
+    {{!-- Already Sampled Card --}}
+    <div class="card burger-board sampled shadow">
+        <div class="card-body">
+            <h3 style= "color: rgb(55, 151, 87)"; class="board-title">Devoured</h3>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burger-block devoured=true}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>

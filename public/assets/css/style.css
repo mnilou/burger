@@ -1,44 +1,111 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #bb8c4f;
+body,
+html {
+  max-width: 100%;
 }
 
-.label {
-  font-weight: bold;
-}
-
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: rgb(55, 151, 87);
-}
-
-.form-group {
-  margin-bottom: 5px;
-}
-
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #d38f36;
+body {
+  background-image: url(http://sfwallpaper.com/images/hd-website-backgrounds-30.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 button {
   background-color: rgb(15, 194, 194);
 }
-.label {
-  font-weight: bold;
+h1 {
+  font-size: 100px;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  max-width: 100rem;
+  text-align: center;
 }
-body {
-  background-image: url(http://sfwallpaper.com/images/hd-website-backgrounds-30.jpg); /*https://cdn.hipwallpaper.com/i/76/99/5CwnbF.jpg */
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #000000;
+
+div.burger-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
 }
-img {
-  margin-left: 300px;
-  height: 300px;
-  border-radius: 90%;
+
+div.burger-board {
+  width: 30rem;
+}
+
+div.fresh {
+  order: 1;
+}
+
+div.sampled {
+  order: 3;
+}
+
+h3.board-title {
+  font-size: 50px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+label,
+h5.burger-name {
+  font-size: 30px;
+}
+
+h5.burger-name {
+  font-size: 24px;
+}
+
+div.form-card {
+  text-align: center;
+  box-shadow: inset;
+  order: 2;
+}
+
+form.form-group {
+  max-width: 17rem;
+  padding: 10px 30px 0 30px;
+}
+
+div.button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button.btn-sm {
+  letter-spacing: 1px;
+  margin-top: 10px;
+  max-height: 3rem;
+  min-width: 4rem;
+  max-width: 6rem;
+}
+
+button.brgr-btn,
+button.delete-burger {
+  letter-spacing: 1px;
+}
+
+button.brgr-btn {
+  margin-top: 10px;
+}
+
+nav.navbar {
+  max-height: 2.5rem;
+}
+
+@media (max-width: 1000px) {
+  div.burger-cards {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  div.form-card {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+  div.fresh {
+    order: 2;
+    margin-bottom: 2rem;
+  }
+  div.sampled {
+    margin-bottom: 4rem;
+  }
 }

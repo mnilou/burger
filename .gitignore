@@ -1,5 +1,2 @@
 node_modules
 
-# from index.handlbars line 9 and 19
-#   {{> burgers/burger-block devoured=true}}
-#  {{> burgers/burger-block devoured=false}}

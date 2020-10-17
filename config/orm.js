@@ -1,43 +1,59 @@
+const { query } = require("express");
 // Import MySQL connection.
-const express = require("express");
-const mysql = require('mysql');
-const connection = require('../config/connection.js');
+var connection = require("../config/connection");
 
 // Object for all our SQL statement functions.
-const orm = {
-  selectAll: (tableInput, cb) => {
-    const queryString = 'SELECT * FROM ??';
-    connection.query(queryString, [tableInput], (err, result) => {
-      if (err) {
-        cb(err);
-      }
-      cb(result);
-    });
-  },
-  insertOne: (table, newRowData, cb) => {
-    const queryString = 'INSERT INTO ?? SET ?';
-    const values = [table, newRowData];
+var orm = {
+    // getting all burgers from DB
+    getAll: function (cb) {
+        connection.query("SELECT * FROM burgers;", function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    },
+    // inserting new burger into DB
+    createOne: function (cols, vals, cb) {
+        var queryString = `INSERT INTO burgers(burger_name, devoured) VALUES ("`;
+        queryString += vals // name of burger
+        queryString += `", FALSE)`; // always making it falsey (uneaten)
 
-    connection.query(queryString, values, (err, result) => {
-      if (err) {
-        cb(err);
-      }
-      return cb(result);
-    });
-  },
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw (err);
+            }
+            cb(result);
+        });
+    },
+    // updating a burger from fresh to devoured and vise versa
+    updateOne: function (objColVals, condition, cb) {
 
-  updateOne: (table, updateValues, condition, cb) => {
-    const queryString = 'UPDATE ?? SET ? WHERE ?';
-    const values = [table, updateValues, condition];
+        var queryString = "UPDATE burgers SET ";
+        queryString += objColVals; // burger id
+        queryString += " WHERE ";
+        queryString += condition; // devoured or not
 
-    console.log(queryString);
-    connection.query(queryString, values, (err, result) => {
-      if (err) {
-        cb(err);
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw (err);
+            }
+            cb(result);
+        });
+    },
+    // deleting burger from DB
+    delete: function(condition, cb) {
+        var queryString = "DELETE FROM burgers WHERE ";
+        queryString += condition; // by id
+    
+        connection.query(queryString, function(err, result) {
+          if (err) {
+            throw err;
+          }
+          cb(result);
+        });
       }
-      cb(result);
-    });
-  },
 };
-// Export the orm object
+
+// Export the orm object for the model.
 module.exports = orm;
