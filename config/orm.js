@@ -38,17 +38,6 @@ const orm = {
       cb(result);
     });
   },
-  // deleteOne: (table, condition, cb) => {
-  //   const queryString = "DELETE FROM ?? WHERE ? LIMIT 1";
-  //   const values = [table, condition];
-  //   connection.query(queryString, values, (err, result) => {
-  //     if (err) {
-  //       throw err;
-  //     }
-  //     cb(result);
-  //   });
-  // },
-
 };
 // Export the orm object
 module.exports = orm;

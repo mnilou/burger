@@ -2,7 +2,7 @@
 $(document).ready(() => {
   $('.change-devoured').on('click', function () {
     const id = $(this).data('id');
-    const newDevoured = $(this).data('newdevoured');
+    const newDevoured = $(this).data('devoured');
 
     const newDevouredState = {value: newDevoured};
 
@@ -24,11 +24,11 @@ $(document).ready(() => {
     event.preventDefault();
 
     const newBurger = {
-      burger_name: $("#burger").val().trim(),
-         };  
+      burger_name: $('#burger').val().trim(),
+    };
 
     // Send the POST request.
-    $.ajax(`/api/burgers/${id}`, {
+    $.ajax(`/api/burgers`, {
       type: 'POST',
       data: newBurger,
     }).then(() => {
@@ -36,26 +36,4 @@ $(document).ready(() => {
       location.reload();
     });
   });
-  // Send the DELETE request.
-//   $.ajax(`/api/burgers/${id}`, {
-//     type: 'DELETE',
-//   }).then(() => {
-//     console.log('deleted burger', id);
-//     // Reload the page to get the updated list
-//     location.reload();
-//   });
-// });
-
-// $(".delete-burger").on("click", () => {
-//   const id = $(this).data("id");
-
-//   // Send the DELETE request.
-//   $.ajax(`/api/burgers/${id}`, {
-//     type: "DELETE",
-//     // data: 
-//   }).then(() => {
-//     // Reload the page to get the updated list
-//     location.reload();
-//   });
-// });
 });
