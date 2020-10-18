@@ -14,7 +14,7 @@
 
 ## Screenshots
 
-<!-- <img src= "assets\employee-tracker.png" alt = "Screenshot of Employee Tracker"> -->
+<img src= "public\assets\images\burger.jpg" alt = "Screenshot of Burger App">
 
 ## Table of contents
 
@@ -23,7 +23,6 @@
 - [Screenshots](#Screenshots)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Demo](#Demo)
 - [Contributors](#Contributors)
 - [Technology](#Technology)
 
@@ -39,11 +38,7 @@
 
 ## Usage
 
-> Click on the app link to view the homepage. User can add burgers, "devour", and delete them.
-
-## Demo
-
-<!-- ![animated demo of app](employee-tracker-demo.gif) -->
+> Click on the app link to view the homepage. User can add burgers, "devour them", and delete them.
 
 ## Contributors
 
