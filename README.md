@@ -23,7 +23,7 @@
 - [Screenshots](#Screenshots)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [App Link](#Link)
+- [Link](#link)
 - [Contributors](#Contributors)
 - [Technology](#Technology)
 
@@ -41,7 +41,7 @@
 
 > Click on the app link to view the homepage. User can add burgers, "devour them", and delete them.
 
-## App Link
+## Link
 > https://burgers-devoured-app.herokuapp.com/ 
 
 ## Contributors
