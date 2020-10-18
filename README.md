@@ -14,7 +14,7 @@
 
 ## Screenshots
 
-<img src= "public\assets\images\burger.jpg" alt = "Screenshot of Burger App">
+<img src= "public\assets\images\screenshot.jpg" alt = "Screenshot of Burger App">
 
 ## Table of contents
 
